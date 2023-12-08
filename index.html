@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        text-align: center;
+      }
+      .navbar {
+        border-radius: 40px 40px 40px 40px;
+        margin-top: 5px;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-left: #0389ff solid 2px;
+        border-top: #2d7feb solid 2px;
+        border-bottom: rgba(254, 0, 0, 0.696) solid 2px;
+        border-right: #e8690f9d solid 2px;
+        box-shadow: black 0px 0px 2px;
+        max-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, rgba(0, 123, 255, 0.991), #00ccff);
+        color: #fff;
+        transition: background 0.5s, color 0.5s;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .container {
+        text-align: center;
+        padding: 5% 2%;
+        opacity: 0;
+        flex-grow: 1;
+      }
+
+      .animate__animated {
+        font-size: 2em;
+        font-family: "Cinzel Decorative", cursive;
+        color: #ffcc00;
+        background: linear-gradient(-30deg, rgb(0, 76, 255), #ff0000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+      }
+
+      .switch-container {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+      }
+
+      .switch {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        margin-top: 0;
+        margin-right: 10px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, rgb(5, 222, 255), #ff0000);
+        transition: 0.1s;
+        border-radius: 20px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 24px;
+        width: 24px;
+        left: 3px;
+        bottom: 3px;
+        background-color: rgb(255, 255, 255);
+        transition: 0.4s;
+        border-radius: 50%;
+        border-right: rgb(252, 96, 96) solid 2px;
+        border-left: rgb(44, 150, 255) solid 2px;
+        border-top: #009dff solid 2px;
+        border-bottom: #ff5151 solid 2px;
+      }
+
+      input:checked + .slider {
+        background: linear-gradient(110deg, #00ffff, rgb(255, 0, 0));
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(30px);
+      }
+
+      .dark-mode {
+        background: linear-gradient(90deg, rgb(165, 37, 37), #000000);
+        color: #ecf0f1;
+      }
+
+      .i1 {
+        max-width: 400px;
+        max-height: 400px;
+        filter: contrast(1.5);
+      }
+
+      .h1i {
+        font-size: 2em;
+        font-family: "Cinzel Decorative", cursive;
+        color: #ffcc00;
+        background: linear-gradient(45deg, rgb(255, 72, 72), #3045fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+        text-align: center;
+        margin: 20px;
+      }
+
+      .h2a {
+        font-size: 1.5em;
+        font-family: monospace;
+        color: #ffcc00;
+        background: linear-gradient(-80deg, rgb(255, 255, 255), #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+        text-align: center;
+        margin: 30px;
+        font-weight: 100;
+        padding: 30px;
+      }
+
+      .da {
+        margin: 50px;
+        border-radius: 20px 20px 100px 100px;
+        border: #00ffff solid 2px;
+        box-shadow: #00ffea 0px 0px 20px;
+      }
+
+      .l {
+        height: 90px;
+        width: 80px;
+        filter: contrast(2);
+        padding: 10px;
+      }
+      .navbar1 {
+        overflow: hidden;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #0369bd, #e10404); /* Blue to Red */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 20px 20px 0px 0px;
+        border: #000000a0 solid 3px;
+        box-shadow: #000000 0px 0px 100px;
+      }
+
+      .navbar1 a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .navbar1 a:hover {
+        background: linear-gradient(
+          45deg,
+          rgba(0, 128, 255, 0.637),
+          rgb(255, 69, 69)
+        );
+        color: black;
+        border-radius: 2px 2px 30px 30px;
+        border-bottom: #00ffea solid 2px;
+        border-left: #00ffea solid 2px;
+        border-right: #00ffea solid 2px;
+      }
+
+      .navbar1 a.active {
+        background-color: linear-gradient(
+          45deg,
+          rgba(0, 128, 255, 0.637),
+          rgb(255, 69, 69)
+        );
+        color: white;
+        border-radius: 0px 0px 20px 20px;
+      }
+
+      .main1 {
+        padding: 16px;
+        margin-bottom: 30px;
+      }
+
+      .dem {
+        font-size: 40px;
+        font-family: "Cinzel Decorative", cursive;
+        text-align: center;
+        color: #ffcc00;
+        background: linear-gradient(45deg, rgb(32, 32, 255), #0026ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          height: 67px;
+        }
+
+        .container {
+          padding: 10% 5%;
+        }
+
+        .animate__animated {
+          font-size: 1.5em;
+          text-align: left;
+        }
+
+        .switch-container {
+          margin-top: 10px;
+          margin-right: 2%;
+        }
+
+        .i1 {
+          max-width: 220px;
+          max-height: 220px;
+        }
+        .h1i {
+          font-size: 1.5em;
+          font-family: "Cinzel Decorative", cursive;
+          color: #ffcc00;
+          background: linear-gradient(45deg, rgb(255, 72, 72), #3045fe);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+          text-align: center;
+          margin: 20px;
+        }
+
+        .h2a {
+          padding: 20px;
+        }
+
+        .da {
+          margin: 30px;
+          border-radius: 6px 6px 50px 50px;
+          box-shadow: #00ffff 0px 0px 10px;
+        }
+        .l {
+          width: 100px;
+          height: 100px;
+          margin-top: -30px;
+          margin-left: -10px;
+        }
+        .navbar1 {
+          flex-direction: column;
+          align-items: center;
+          box-shadow: #00ffea 0px 0px 200px;
+        }
+
+        .navbar1 a {
+          font-size: 20px;
+          margin-top: -10px;
+        }
+        .navbar1 a:hover {
+          background: linear-gradient(
+            45deg,
+            rgba(0, 128, 255, 0.637),
+            rgb(255, 69, 69)
+          );
+          color: black;
+          border-radius: 30px 30px 30px 30px;
+          border-bottom: #00ffea solid 2px;
+          border-left: #00ffea solid 2px;
+          border-right: #00ffea solid 2px;
+          border-top: #00ffea solid 2px;
+        }
+
+        .dem {
+          font-size: 20px;
+          font-family: "Cinzel Decorative", cursive;
+          text-align: center;
+          color: #ffcc00;
+          background: linear-gradient(45deg, rgb(23, 144, 205), #0026ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: animate__fadeInDown 1s ease-out 0.5s forwards;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <a class="navbar-brand" href="#N1">
+            <img src="cl1.png" class="l" id="L" />
+          </a>
+          <div class="switch-container">
+            <label class="switch">
+              <input type="checkbox" id="modeSwitch" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="hello" id="Hi">
+      <h1 class="h1i">Hello, Welcome To My Portfolio 👋</h1>
+      <p id="demo" class="dem"></p>
+    </div>
+    <div class="info d-flex justify-content-center" id="Info">
+      <img src="pnggg.png" class="i1" id="I1" />
+    </div>
+    <div class="da" id="A">
+      <h2 class="h2a">
+        Aspiring Data Scientist | Python Enthusiast 🐍 | Unleashing the Power of
+        Code to Decode the World of Data Science! 🌐
+      </h2>
+    </div>
+    <div class="last"><h1>&nbsp;</h1></div>
+    <div class="navbar1" id="N1">
+      <a href="index.html" class="active">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="resume.html">Resume</a>
+      <a href="aboutme.html">About me</a>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+  <script>
+    const container = document.querySelector(".container");
+    const modeSwitch = document.getElementById("modeSwitch");
+
+    modeSwitch.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    anime({
+      targets: container,
+      opacity: 1,
+      easing: "easeInOutQuad",
+      duration: 1500,
+      delay: 500,
+    });
+
+    var i = 0;
+    var txt = "I'm Charan Teja B S.";
+    var speed = 66;
+
+    setTimeout(type, 2000);
+
+    function type() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+  </script>
+</html>
